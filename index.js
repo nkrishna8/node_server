@@ -27,6 +27,13 @@ app.use("/router",router)
 
 app.use("/user",userRouter);
 
+//Used to Serve Static site generated through npm run build in React Project
+app.use("/",express.static('./build'));
+
+app.get ("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,'./build/index.html'));
+})
+
 // app.get('/', (req, res) => {
 //     res.send('Hello World!')
 // });
