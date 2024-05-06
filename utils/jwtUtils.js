@@ -2,6 +2,7 @@ const { sign, verify } = require('jsonwebtoken');
 const { errorCreator } = require('./responseCreator');
 
 const SECRET_KEY = "hello@json";
+// const SECRET_KEY = process.env.SECRET_KEY;
 
 const generateToken = (data,timeduration='1h') => {
     return sign(data, SECRET_KEY, { expiresIn: timeduration });

@@ -6,6 +6,8 @@ const requestLogger=require('./utils/requestLogger');
 const errorHandler = require('./utils/errorHandler');
 const userRouter=require('./routes/userRouter');
 const cookieParser=require('cookie-parser');
+const dotenv=require('dotenv');
+dotenv.config();
 
 //Connect to Database
 const db=require('./dbConnection');
